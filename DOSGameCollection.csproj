@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>appicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="appicon.ico" />
+    <!-- Collection actions-->
+    <EmbeddedResource Include="Resources\icons\refresh.png" />
+    <EmbeddedResource Include="Resources\icons\new.png" />
+    <EmbeddedResource Include="Resources\icons\delete.png" />
+
+    <!-- Game actions -->
+    <EmbeddedResource Include="Resources\icons\play.png" />
+    <EmbeddedResource Include="Resources\icons\prompt.png" />
+    <EmbeddedResource Include="Resources\icons\settings.png" />
+    <EmbeddedResource Include="Resources\icons\manual.png" />
+    <EmbeddedResource Include="Resources\icons\dosbox-stg.png" />
+    <EmbeddedResource Include="Resources\icons\folder.png" />
+
+    <!-- Edit actions-->
+    <EmbeddedResource Include="Resources\icons\edit.png" />
+    <EmbeddedResource Include="Resources\icons\cancel.png" />
+    <EmbeddedResource Include="Resources\icons\ok.png" />
+    
+    <!-- Disk selection actions-->
+    <EmbeddedResource Include="Resources\icons\up.png" />
+    <EmbeddedResource Include="Resources\icons\down.png" />
+    <EmbeddedResource Include="Resources\icons\delete_disk.png" />
+
+    <!--Small icons for media-->
+    <EmbeddedResource Include="Resources\icons\movie_20.png" />
+    <EmbeddedResource Include="Resources\icons\pdf_20.png" />
+    <EmbeddedResource Include="Resources\icons\image_20.png" />
+    <EmbeddedResource Include="Resources\icons\cd_20.png" />
+    <EmbeddedResource Include="Resources\icons\floppy_20.png" />
+    <EmbeddedResource Include="Resources\icons\default_20.png" />
+    <EmbeddedResource Include="Resources\icons\pop_20.png" />
+    <EmbeddedResource Include="Resources\icons\music_20.png" />
+
+    <!--Image for the abou dialog -->
+    <EmbeddedResource Include="Resources\DGC-logo-200.png" />
+
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="PdfiumViewer.Updated" Version="2.14.5" />
+    <PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
+  </ItemGroup>
+  <!-- Other files to be shipped with the release-->
+  <ItemGroup>
+    <Content Include="file-templates\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
