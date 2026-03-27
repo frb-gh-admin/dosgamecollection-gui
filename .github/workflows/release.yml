@@ -34,10 +34,10 @@ jobs:
         echo "TAG_NO_V=${TAG_WITH_V#v}" >> $GITHUB_OUTPUT
 
     - name: Build and Publish
-      # Publishes the application in Release mode for Windows x64, self-contained, and as a single file.
-      # This means the user won't need to install the .NET runtime separately.
-      # We pass the version number from the tag to the build.
-      run: dotnet publish --configuration Release --output publish_output --self-contained true --runtime win-x64 /p:PublishSingleFile=true /p:UseAppHost=true /p:Version=${{ steps.get_tag.outputs.TAG_NO_V }} /p:InformationalVersion=${{ steps.get_tag.outputs.TAG_WITH_V }}
+      # Publishes Release, self-contained win-x64 (folder of DLLs + exe, not single-file) so native Pdfium loads reliably.
+      # Users do not need a separate .NET runtime install.
+      # Version comes from the pushed tag.
+      run: dotnet publish --configuration Release --output publish_output --self-contained true --runtime win-x64 /p:UseAppHost=true /p:Version=${{ steps.get_tag.outputs.TAG_NO_V }} /p:InformationalVersion=${{ steps.get_tag.outputs.TAG_WITH_V }}
 
     - name: Create Release Archive
       # Using PowerShell's Compress-Archive for zipping the published output on Windows
