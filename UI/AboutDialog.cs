@@ -49,7 +49,7 @@ public class AboutDialog : Form
 
         var aboutLabel = new Label
         {
-            Text = $"DOSGameCollection\n\nVersion: {version}\n\nAn application to manage and launch your DOS games. By Homero Trevino",
+            Text = $"DOSGameCollection\n\nVersion: {version}\n\nAn application to manage and launch your library of DOSBox emulated games.",
             TextAlign = ContentAlignment.MiddleCenter,
             Dock = DockStyle.Fill
         };

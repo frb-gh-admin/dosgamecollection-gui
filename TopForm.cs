@@ -114,7 +114,7 @@ public class TopForm : Form
         mainLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
         mainLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
 
-        // Collection buttom initialization
+        // Collection button initialization
         refreshButton = new Button
         { Anchor = AnchorStyles.Left, Size = new Size(35, 35), Margin = new Padding(5), };
         refreshButton.Click += RefreshButton_Click;
@@ -1572,8 +1572,8 @@ private async void DeleteGameButton_Click(object? sender, EventArgs e)
         catch (Exception ex)
         {
             MessageBox.Show(this, $"Failed to save game data: {ex.Message}", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            // Revert textboxes to original values on error
-            gameNameTextBox.Text = originalName; // Revert on error
+            // Revert text boxes to original values on error
+            gameNameTextBox.Text = originalName; 
             releaseYearTextBox.Text = selectedGame.ReleaseYear?.ToString() ?? string.Empty;
             runCommandsTextBox.Text = string.Join(Environment.NewLine, originalCommands);
             setupCommandsTextBox.Text = string.Join(Environment.NewLine, originalSetupCommands);
